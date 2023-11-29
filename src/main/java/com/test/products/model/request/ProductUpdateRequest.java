@@ -1,6 +1,5 @@
-package com.test.products.entity;
+package com.test.products.model.request;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,18 +10,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "products")
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ProductUpdateRequest {
 
     private String name;
     private String description;
     private double price;
     private int count;
 
-    
 }
