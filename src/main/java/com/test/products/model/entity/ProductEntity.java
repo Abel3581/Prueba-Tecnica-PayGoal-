@@ -1,7 +1,6 @@
 package com.test.products.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "products")
 public class ProductEntity {
@@ -24,5 +22,19 @@ public class ProductEntity {
     private double price;
     private int count;
 
-    
+    public ProductEntity(String name, String description, double price, int count) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.count = count;
+
+    }
+
+    public ProductEntity(Long id, String name, String description, double price, int count) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.count = count;
+    }
 }
